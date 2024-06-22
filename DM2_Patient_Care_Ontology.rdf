@@ -1,0 +1,2503 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology/"
+     xml:base="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string">
+        <rdfs:comment>Value of HBA1c which is reported as a percentage or mmol/mol</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasAssociatedDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasAssociatedDiagnosis">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComplicationDiagnosis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+        <rdfs:comment>Links a complication diagnosis to its associated general diagnosis (e.g., diabetes diagnosis)  that led to the development of the complication.</rdfs:comment>
+        <rdfs:label>hasAssociatedDiagnosis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComorbidity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComorbidity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComorbidityDiagnosis"/>
+        <rdfs:comment>Links a patient profile to their comorbidity diagnoses, such as hypertension or hyperlipidemia.</rdfs:comment>
+        <rdfs:label>hasComorbidity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComplicationDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComplicationDiagnosis">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComplicationDiagnosis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Complication"/>
+        <rdfs:comment>Associates a diagnosis to the specific complication it refers to</rdfs:comment>
+        <rdfs:label>hasComplicationDiagnosis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasDiagnosisType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasDiagnosisType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabetesDiagnosis"/>
+        <rdfs:comment>Specifies the type of diagnosis that has been diagnosed, such as Type 2 Diabetes Mellitus or pre-diabetes.</rdfs:comment>
+        <rdfs:label>hasDiagnosisType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasDosageInformation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasDosageInformation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dosage"/>
+        <rdfs:comment>Provides details about medication dosages.</rdfs:comment>
+        <rdfs:label>hasDosageInformation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+        <rdfs:comment>Links a patient profile to the results of glucose tests conducted for diagnostic or monitoring purposes.</rdfs:comment>
+        <rdfs:label>hasGlucoseTestResult</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasLabTestResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasLabTestResult">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+        <rdfs:comment>Links a patient profile to the results of laboratory tests conducted for diabetes management</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMechanismOfAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMechanismOfAction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug"/>
+        <rdfs:comment>Describes the mechanism of action of a drug.</rdfs:comment>
+        <rdfs:label>hasMechanismOfAction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMedicalHistory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMedicalHistory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalHistory"/>
+        <rdfs:comment>Links a patient profile to their medical history, including past diagnoses, surgeries, and family history relevant to diabetes management</rdfs:comment>
+        <rdfs:label>hasMedicalHistory</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMedication -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMedication">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+        <rdfs:comment>Specifies pharmacological treatments available as options</rdfs:comment>
+        <rdfs:label>hasMedication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMonitoringParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMonitoringParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasNonPharmacologicalTreatment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monitoring"/>
+        <rdfs:comment>Specifies the monitoring parameters like target blood glucose levels, HbA1c levels associated with the non-pharmacotheray treatment option.</rdfs:comment>
+        <rdfs:label>hasMonitoringParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasNonPharmacologicalTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasNonPharmacologicalTreatment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological"/>
+        <rdfs:comment>Indicates non-pharmacological treatments and interventions</rdfs:comment>
+        <rdfs:label>hasNonPharmacologicalTreatment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasPrimaryDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasPrimaryDiagnosis">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+        <rdfs:comment>Links a patient profile to their primary diagnosis, such as DM2 or pre-diabetes.</rdfs:comment>
+        <rdfs:label>hasPrimaryDiagnosis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasRelatedCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasRelatedCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+        <rdfs:comment>Links a diagnosis to other related medical conditions including DM2, pre-diabetes, and comorbidities.</rdfs:comment>
+        <rdfs:label>hasRelatedCondition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasSymptom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SymptomAssessment"/>
+        <rdfs:comment>Links a patient profile to assessments and documentation of symptoms related to diabetes</rdfs:comment>
+        <rdfs:label>hasSymptom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasdiagnosesCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasdiagnosesCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+        <rdfs:comment>Links a diagnosis (including primary, comorbidity, and complication diagnoses) to the medical condition being diagnosed</rdfs:comment>
+        <rdfs:label>isDiagnosisOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1cLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1cLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#dosage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#dosage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Dosage of the medication. The value is in mg, units, etc.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#frequency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#frequency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Frequency of administration per day, week, etc.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#medicationName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#medicationName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#patientID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#patientID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#sideEffects -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#sideEffects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Describes the mechanism of action</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#testDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#testDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#testResultValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#testResultValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#unit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#unit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AFPSerum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AFPSerum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TumorMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Acetohexamide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Acetohexamide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Age -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Age">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Demographics"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Gender"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlcoholConsumption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlcoholConsumption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlkalinePhosphatase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlkalinePhosphatase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Alogliptin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Alogliptin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlternativeTherapies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlternativeTherapies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Aspart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Aspart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Basophils -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Basophils">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Biguanides -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Biguanides">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Bilirubin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Bilirubin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#BiphasicInsulinAspart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#BiphasicInsulinAspart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Blood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Blood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#BloodGlucoseMonitoring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#BloodGlucoseMonitoring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monitoring"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1CMonitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CA125 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CA125">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TumorMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Canagliflozin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Canagliflozin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGLT2Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CardiovascularDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CardiovascularDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MacrovascularComplications"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#UrineAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicroscopicExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Chloropropamide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Chloropropamide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChronicKidneyDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChronicKidneyDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComorbidityDiagnosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComorbidityDiagnosis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+        <rdfs:comment>A diagnosis of a coexisting medical condition occurring alongside a primary diagnosis, such as hypertension or Dyslipidemia</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Complication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Complication">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>Complications are secondary health issues resulting from a primary disease or condition&apos;s impact on the body(DM2 or Pre-diabetes)</rdfs:comment>
+        <rdfs:label>Complication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComplicationDiagnosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComplicationDiagnosis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Crystals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Crystals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicroscopicExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentMedications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentMedications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentSymptoms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentSymptoms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DM2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DM2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabetesDiagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dapagliflozin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dapagliflozin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGLT2Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DeAddiction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DeAddiction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DegludecU-100 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DegludecU-100">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DegludecU-200 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DegludecU-200">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Demographics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Demographics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DentalComplications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DentalComplications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OtherComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Detemir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Detemir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabetesDiagnosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabetesDiagnosis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasPrimaryDiagnosis"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DM2"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pre-diabetes"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabetesEducationPrograms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabetesEducationPrograms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#EducationAndSupport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SupportGroups"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticNephropathy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticNephropathy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicrovascularComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticNeuropathy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticNeuropathy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicrovascularComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticRetinopathy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticRetinopathy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicrovascularComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasRelatedCondition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasdiagnosesCondition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>Links a diagnosis to the diagnostic testsor lab tests conducted</rdfs:comment>
+        <rdfs:label>Diagnosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DietPreferences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DietPreferences">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleFactors"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DirectBilirubin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DirectBilirubin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dosage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dosage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseAmount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseAmount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dosage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseFrequency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseFrequency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dosage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseTiming -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseTiming">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dosage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dyslipidemia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dyslipidemia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#EducationAndSupport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#EducationAndSupport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Empagliflozin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Empagliflozin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGLT2Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Eosinophils -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Eosinophils">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ethnicity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ethnicity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Demographics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ExerciseRoutines -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ExerciseRoutines">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleFactors"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FamilyHistoryOfDiabetes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FamilyHistoryOfDiabetes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalHistory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Fatigue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Fatigue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ferritin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ferritin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TumorMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FootComplications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FootComplications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OtherComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GammaGT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GammaGT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Gender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Demographics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlargineU-100 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlargineU-100">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlargineU-300 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlargineU-300">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glibenclamide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glibenclamide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Gliclazide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Gliclazide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinSecretagogues"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GliclazideModifiedRelease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GliclazideModifiedRelease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinSecretagogues"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glimepiride -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glimepiride">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+        <rdfs:comment>Glimepiride is an oral hypoglycemic agent that enhances insulin secretion. It is used to lower blood sugar levels in individuals with type 2 diabetes mellitus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glimepride -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glimepride">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+        <rdfs:comment>Glimepiride is an insulin secretagogue that activates sulfonylurea receptors on beta cells. It stimulates the pancreas to release insulin, thereby lowering blood glucose levels.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glipizide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glipizide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glucose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glucose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glulisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glulisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glyburide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glyburide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinSecretagogues"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HDLCholesterol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HDLCholesterol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LipidProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1C -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1C">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1CMonitoring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1CMonitoring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hematocrit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hematocrit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hemoglobin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hemoglobin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighFPG -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighFPG">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateFPG"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighHbA1c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighHbA1c">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1C"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateHbA1c"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighOGTT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighOGTT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateOGTT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighRPG -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HighRPG">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateRPG"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hypertension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hypertension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ImpairedFastingGlucose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ImpairedFastingGlucose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pre-diabetes"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ImpairedGlucoseTolerance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ImpairedGlucoseTolerance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ImpairedGlucoseTolerance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pre-diabetes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Infections -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Infections">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OtherComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinAndOralHypoglycemicAgents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinAndOralHypoglycemicAgents">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentMedications"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicationsForHypertensionAndDyslipidemia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinSecretagogues -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinSecretagogues">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateActingInsulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateActingInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateFPG -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateFPG">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateHbA1c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateHbA1c">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1C"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateOGTT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateOGTT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateRPG -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateRPG">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ketones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ketones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LDLCholesterol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LDLCholesterol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LipidProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Linagliptin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Linagliptin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LipidProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LipidProfile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LisproU-100 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LisproU-100">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LisproU-200 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LisproU-200">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LongActingInsulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LongActingInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lymphocytes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lymphocytes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCHC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCHC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCV -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCV">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MacrovascularComplications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MacrovascularComplications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Complication"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComplicationDiagnosis"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicrovascularComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A general term encompassing various health conditions, diseases, or disorders relevant to diabetes management, including Type 2 Diabetes Mellitus(DM2), Pre Diabetes and related comorbidities</rdfs:comment>
+        <rdfs:label>MedicalCondition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalHistory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalHistory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicationsForHypertensionAndDyslipidemia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicationsForHypertensionAndDyslipidemia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentMedications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Metformin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Metformin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Biguanides"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MetforminExtended-release"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MetforminExtended-release -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MetforminExtended-release">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Biguanides"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicroscopicExamination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicroscopicExamination">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#UrineAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicrovascularComplications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicrovascularComplications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Complication"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ComplicationDiagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monitoring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monitoring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monocytes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monocytes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NPH_insulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NPH_insulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Obesity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Obesity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Orlistat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Orlistat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WeightLossAgents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OtherComplications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OtherComplications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Complication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PastDiagnoses -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PastDiagnoses">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalHistory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PatientProfile">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasLabTestResult"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasPrimaryDiagnosis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasLabTestResult"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasPrimaryDiagnosis"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A comprehensive record containing demographic information, medical history, diagnoses, treatments, and other relevant data specific to an individual patient, essential for personalized diabetes management.</rdfs:comment>
+        <rdfs:label>PatientProfile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PeripheralArteryDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PeripheralArteryDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MacrovascularComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pioglitazone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pioglitazone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Thiazolidinediones"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Rosiglitazone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PlateletCount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PlateletCount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Polydipsia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Polydipsia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Polyuria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Polyuria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pre-diabetes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pre-diabetes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PreDiabetes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PreDiabetes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateFPG"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateOGTT"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasGlucoseTestResult"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateRPG"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabetesDiagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PremixedRegular-NPHInsulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PremixedRegular-NPHInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Protein -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Protein">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ProthrombinINR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ProthrombinINR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PusCells -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PusCells">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicroscopicExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RapidActingInsulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RapidActingInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RedBloodCells -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RedBloodCells">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MicroscopicExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RedCellCount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RedCellCount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RegularInsulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RegularInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Repaglinide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Repaglinide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinSecretagogues"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Rosiglitazone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Rosiglitazone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Thiazolidinediones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGLT2Inhibitors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGLT2Inhibitors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Drug"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Saxagliptin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Saxagliptin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumAlbumin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumAlbumin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumCreatinine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumCreatinine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumPotassium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumPotassium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumSodium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumSodium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumUrea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumUrea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumUricAcid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumUricAcid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ShortActingInsulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ShortActingInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sitagliptin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sitagliptin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SkinComplications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SkinComplications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OtherComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SmokingStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SmokingStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#StressManagement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#StressManagement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Stroke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Stroke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MacrovascularComplications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SupportGroups -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SupportGroups">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#EducationAndSupport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Surgeries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Surgeries">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalHistory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SymptomAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SymptomAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Thiazolidinediones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Thiazolidinediones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Tolazamide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Tolazamide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Tolbutamide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Tolbutamide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalBilirubin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalBilirubin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalCholesterol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalCholesterol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LipidProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalProtein -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalProtein">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TreatmentOptions">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMedication"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasNonPharmacologicalTreatment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A therapeutic approach, intervention, or strategy recommended or prescribed to manage Type 2 Diabetes Mellitus, including pharmacological treatments, lifestyle modifications, and non-pharmacological interventions.</rdfs:comment>
+        <rdfs:label>TreatmentOptions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Triglycerides -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Triglycerides">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LipidProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TumorMarker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TumorMarker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Type2DiabetesMellitus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Type2DiabetesMellitus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#UrineAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#UrineAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Urobilinogen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Urobilinogen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChemicalExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Vildagliptin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Vildagliptin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WeightLossAgents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WeightLossAgents">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WeightManagement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WeightManagement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WhiteCellCount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WhiteCellCount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HematologicalProfile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dulaglutide(Trulicity®) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dulaglutide(Trulicity®)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Exenatide(Byetta®) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Exenatide(Byetta®)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ExenatideExtended-release(Bydureon®) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ExenatideExtended-release(Bydureon®)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Liraglutide(Victoza®) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Liraglutide(Victoza®)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lispro/lisproProtamineSuspension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lispro/lisproProtamineSuspension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lixisenatide(Adlyxin®) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lixisenatide(Adlyxin®)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGOT(AST) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGOT(AST)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGPT(ALT) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGPT(ALT)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LiverFunctionTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SemaglutideInjection(Ozempic®) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SemaglutideInjection(Ozempic®)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SemaglutideTablets(Rybelsus®) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SemaglutideTablets(Rybelsus®)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasAssociatedDiagnosis"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComorbidity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComplicationDiagnosis"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Complication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComplicationDiagnosis"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasDiagnosisType"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasDosageInformation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dosage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasLabTestResult"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LabTests"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMedicalHistory"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasMedication"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pharmacological"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasNonPharmacologicalTreatment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NonPharmacological"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasPrimaryDiagnosis"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasRelatedCondition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SymptomAssessment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasdiagnosesCondition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasComplicationDiagnosis"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#hasRelatedCondition"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalCondition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG">
+        <rdfs:comment>Value of fasting plasma glucose in mg/dL</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT">
+        <rdfs:comment>Value of oral glucose tolerance test in mg/dL</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG">
+        <rdfs:comment>value of random plasma glucose in mg/dL</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AFPSerum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CA125"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ferritin"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlcoholConsumption"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DietPreferences"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ExerciseRoutines"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SmokingStatus"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlkalinePhosphatase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DirectBilirubin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GammaGT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumAlbumin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalBilirubin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalProtein"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGOT(AST)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGPT(ALT)"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Alogliptin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Linagliptin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Saxagliptin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sitagliptin"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#AlternativeTherapies"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#EducationAndSupport"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleModification"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monitoring"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Aspart"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#BiphasicInsulinAspart"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DegludecU-100"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DegludecU-200"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Detemir"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlargineU-100"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlargineU-300"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glulisine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LisproU-100"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LisproU-200"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#NPH_insulin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PremixedRegular-NPHInsulin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RegularInsulin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lispro/lisproProtamineSuspension"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Basophils"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Eosinophils"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hematocrit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hemoglobin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lymphocytes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCH"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCHC"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MCV"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Monocytes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PlateletCount"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ProthrombinINR"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RedCellCount"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WhiteCellCount"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Biguanides"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DPP4Inhibitors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Sulfonylureas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Thiazolidinediones"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Bilirubin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Blood"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Glucose"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Ketones"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Protein"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Urobilinogen"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Canagliflozin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dapagliflozin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Empagliflozin"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CardiovascularDisease"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChronicKidneyDisease"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dyslipidemia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hypertension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Obesity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CardiovascularDisease"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ChronicKidneyDisease"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dyslipidemia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Hypertension"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Obesity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Pre-diabetes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Type2DiabetesMellitus"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CardiovascularDisease"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PeripheralArteryDisease"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Stroke"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Crystals"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PusCells"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RedBloodCells"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#CurrentMedications"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Demographics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LifestyleFactors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#MedicalHistory"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DentalComplications"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FootComplications"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Infections"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SkinComplications"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticNephropathy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticNeuropathy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DiabeticRetinopathy"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DietPreferences"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ExerciseRoutines"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#WeightManagement"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseAmount"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseFrequency"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#DoseTiming"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FPG"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HbA1C"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OGTT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RPG"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#FamilyHistoryOfDiabetes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#PastDiagnoses"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Surgeries"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Fatigue"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Polydipsia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Polyuria"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#InsulinSecretagogues"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGLT2Inhibitors"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GLP1Agonists"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Insulins"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#OralHypoglycemics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SGLT2Inhibitors"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#GlucoseTests"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#KidneyFunctionTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LipidProfile"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#HDLCholesterol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LDLCholesterol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#TotalCholesterol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Triglycerides"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#IntermediateActingInsulin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#LongActingInsulin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#RapidActingInsulin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ShortActingInsulin"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumCreatinine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumPotassium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumSodium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumUrea"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SerumUricAcid"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Dulaglutide(Trulicity®)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Exenatide(Byetta®)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#ExenatideExtended-release(Bydureon®)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Liraglutide(Victoza®)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#Lixisenatide(Adlyxin®)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SemaglutideInjection(Ozempic®)"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/shimona/ontologies/2024/5/Diabetes_Personalized_Care_Ontology#SemaglutideTablets(Rybelsus®)"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
